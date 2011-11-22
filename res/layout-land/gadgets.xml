@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+	<TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+			android:textSize="24sp"
+			android:textColor="@android:color/white"
+        android:id="@+id/server_status" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+			android:textSize="24sp"
+			android:textColor="@android:color/white"
+        android:id="@+id/selected_device" />
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/choose" />
+
+            <Spinner
+                android:id="@+id/objectChooser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/objects"
+                android:prompt="@string/chooseObject" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/alexButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/alex" />
+
+            <Button
+                android:id="@+id/electricOnButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/electricOn" />
+
+            <Button
+                android:id="@+id/electricOffButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/electricOff" />
+
+            <Button
+                android:id="@+id/heatButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/heat" />
+
+            <Button
+                android:id="@+id/steamButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/steam" />
+
+            <Button
+                android:id="@+id/waterButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/water" />
+            
+            <Button
+                android:id="@+id/startButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/start" />
+
+            <Button
+                android:id="@+id/turnButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/turn" />
+
+            <Button
+                android:id="@+id/pullButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pull" />
+
+            <Button
+                android:id="@+id/releaseButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/release" />
+
+            <Button
+                android:id="@+id/clapButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clap" />
+
+            <Button
+                android:id="@+id/pulseButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pulse" />
+        </LinearLayout>
+		<LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/currentState" />
+
+            <TextView
+                android:id="@+id/currentStateView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/empty"
+                android:textColor="@color/green" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/viewFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </FrameLayout>
+
+</LinearLayout>

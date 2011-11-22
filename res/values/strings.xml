@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, GraphicsActivity!</string>
+    <string name="app_name">Graphics</string>
+    <string-array name="objects">
+        <item >Christmas Tree</item>
+        <item >Clapping Monkey</item>
+        <item >Pinwheel</item>
+        <item>Candle</item>
+        <item>Clapper</item>
+        <item>Cleat</item>
+        <item>Electric Outlet</item>
+        <item>Kettle</item>
+        <item>Rope</item>
+        <item>Rubber Band</item>
+        <item>TV</item>
+        <item>Water Cooler</item>
+        <item>Wire</item>
+    </string-array>
+    <string name="alex">Alex</string>
+    <string name="clap">Clap</string>
+    <string name="heat">Heat</string>
+    <string name="water">Water</string>
+    <string name="steam">Steam</string>
+    <string name="electricOn">Elec On</string>
+    <string name="electricOff">Elec Off</string>
+    <string name="pulse">Pulse</string>
+    <string name="start">Start</string>
+    <string name="pull">Pull</string>
+    <string name="release">Release</string>
+    <string name="turn">Turn</string>
+    <string name="choose">Object: </string>
+    <string name="currentState">"Current State: "</string>
+    <string name="empty"></string>
+    <string name="chooseObject">choose an object</string>
+	<string name="gadgets">Gadgets</string>
+	<string name="bluetooth">Bluetooth</string>
+	<string name="pairing">Pairing</string>
+	<string name="select">Select Device</string>
+	<string name="start_server">Start Server</string>
+	<string name="stop_server">Stop Server</string>
+	<string name="make_discoverable">Make Discoverable</string>
+	<string name="stop_discoverable">Stop Discoverable</string>
+</resources>
