@@ -64,7 +64,10 @@ public abstract class StateObjectView extends View {
 		drawables = new HashMap<State, Drawable>();
 		propertyChangeSupport = new PropertyChangeSupport(this);
 		directions = new ArrayList<Direction>();
-		directions.add(Direction.All);
+		directions.add(Direction.Up);
+		directions.add(Direction.Down);
+		directions.add(Direction.Left);
+		directions.add(Direction.Right);
 	}
 	
 	protected abstract void setup(Context context);
@@ -107,7 +110,7 @@ public abstract class StateObjectView extends View {
 	 */
 	protected void setCurrentState(TransitionValue state) {
 		currentState = state;
-		propertyChangeSupport.firePropertyChange(StateChangeEvent, null, currentState.getState().name());
+		propertyChangeSupport.firePropertyChange(StateChangeEvent, null, currentState);
 	}
 	
 	/**
@@ -132,7 +135,7 @@ public abstract class StateObjectView extends View {
 	 * @param event - the event triggered
 	 */
 	public void changeState(Event event, Direction direction) {
-		Map<Event, TransitionValue> trans = transitions.get(currentState);
+		Map<Event, TransitionValue> trans = transitions.get(currentState.getState());
 		if (trans != null) {
 			TransitionValue newState = trans.get(event);
 			if (newState != null) {

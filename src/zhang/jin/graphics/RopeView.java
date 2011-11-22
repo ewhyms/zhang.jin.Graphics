@@ -80,7 +80,7 @@ public abstract class RopeView extends StateObjectView {
 	@Override
 	public void changeState(Event event, Direction direction) {
 		if (opposites.containsKey(direction)) {
-			Map<Event, TransitionValue> trans = transitions.get(currentState);
+			Map<Event, TransitionValue> trans = transitions.get(currentState.getState());
 			if (trans != null) {
 				TransitionValue newState = trans.get(event);
 				if (newState != null) {

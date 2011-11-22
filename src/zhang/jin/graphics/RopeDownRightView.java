@@ -38,11 +38,11 @@ public class RopeDownRightView extends RopeView {
 	 */
 	@Override
 	protected void setupDrawables(Context context) {
-		addDrawable(State.Slack, context.getResources().getDrawable(R.drawable.rope_slack_left_right));
-		addDrawable(State.BurningSlack, context.getResources().getDrawable(R.drawable.rope_burning_slack_left_right));
-		addDrawable(State.Taut, context.getResources().getDrawable(R.drawable.rope_taut_left_right));
-		addDrawable(State.BurningTaut, context.getResources().getDrawable(R.drawable.rope_burning_taut_left_right));
-		addDrawable(State.Ashes, context.getResources().getDrawable(R.drawable.rope_ashes_left_right));
+		addDrawable(State.Slack, context.getResources().getDrawable(R.drawable.rope_slack_down_right));
+		addDrawable(State.BurningSlack, context.getResources().getDrawable(R.drawable.rope_burning_slack_down_right));
+		addDrawable(State.Taut, context.getResources().getDrawable(R.drawable.rope_taut_down_right));
+		addDrawable(State.BurningTaut, context.getResources().getDrawable(R.drawable.rope_burning_taut_down_right));
+		addDrawable(State.Ashes, context.getResources().getDrawable(R.drawable.rope_ashes_down_right));
 	}
 
 }

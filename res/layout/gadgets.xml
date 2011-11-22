@@ -6,15 +6,21 @@
 	<TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-			android:textSize="24sp"
+			android:textSize="12sp"
 			android:textColor="@android:color/white"
         android:id="@+id/server_status" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-			android:textSize="24sp"
+			android:textSize="12sp"
 			android:textColor="@android:color/white"
         android:id="@+id/selected_device" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+			android:textSize="12sp"
+			android:textColor="@android:color/white"
+        android:id="@+id/scan_status" />
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
@@ -39,9 +45,9 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/buttonLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:gravity="center" >
 
         <Button
             android:id="@+id/alexButton"
@@ -67,6 +73,12 @@
             android:layout_height="wrap_content"
             android:text="@string/heat" />
 
+   </LinearLayout>
+   
+   <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
         <Button
             android:id="@+id/steamButton"
             android:layout_width="wrap_content"
@@ -90,6 +102,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/turn" />
+        
+        
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
         
         <Button
             android:id="@+id/pullButton"

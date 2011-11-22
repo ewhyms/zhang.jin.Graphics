@@ -12,11 +12,15 @@
         <item>Cleat</item>
         <item>Electric Outlet</item>
         <item>Kettle</item>
-        <item>Rope</item>
+        <item>Rope Down Right</item>
+        <item>Rope Left Right</item>
+        <item>Rope Up Down</item>
+        <item>Rope Up Right</item>
         <item>Rubber Band</item>
         <item>TV</item>
         <item>Water Cooler</item>
-        <item>Wire</item>
+        <item>Wire Left Right</item>
+        <item>Wire Up Down</item>
     </string-array>
     <string name="alex">Alex</string>
     <string name="clap">Clap</string>
@@ -40,6 +44,7 @@
 	<string name="select">Select Device</string>
 	<string name="start_server">Start Server</string>
 	<string name="stop_server">Stop Server</string>
+	<string name="scan">Scan</string>
 	<string name="make_discoverable">Make Discoverable</string>
 	<string name="stop_discoverable">Stop Discoverable</string>
 </resources>

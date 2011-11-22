@@ -162,7 +162,7 @@ public abstract class BluetoothActivity extends Activity {
 				case BLUETOOTH_MESSAGE:
 					byte[] buffer = (byte[]) msg.obj;
 					String content = new String(buffer, 0, msg.arg1);
-					String[] eventList = content.split("|");
+					String[] eventList = content.split("\\|");
 					try {
 					if (eventList.length >= 2) {
 						Event event = Event.valueOf(eventList[1]);
@@ -170,6 +170,8 @@ public abstract class BluetoothActivity extends Activity {
 						if (eventList.length > 2)
 							direction = Direction.valueOf(eventList[2]);
 						changeState(event, direction);
+						receiveMessage = eventList[0] + " - " + eventList[1] + " - ";
+						showDialog(DIALOG_RECEIVING);
 					}
 					}catch (Exception e) {
 						receiveMessage = eventList[0] + " - " + eventList[1] + " - ";
@@ -229,7 +231,6 @@ public abstract class BluetoothActivity extends Activity {
     				socket.close();
     		}
 		} catch (IOException e) {
-			showDialog(DIALOG_USER_IS_EVIL);
 			e.printStackTrace();
 		}
     }
@@ -310,6 +311,10 @@ public abstract class BluetoothActivity extends Activity {
     				serverStatus.setText("Server NOT running");
     			}
     			return true;
+    		case R.id.scan:
+    			IntentIntegrator intentIntegrator = new IntentIntegrator(BluetoothActivity.this);
+    			intentIntegrator.initiateScan();
+    			return true;
     	}
     	return super.onMenuItemSelected(featureId, item);
     }
@@ -346,6 +351,14 @@ public abstract class BluetoothActivity extends Activity {
     			((TextView)findViewById(R.id.selected_device)).setText("NO DEVICE SELECTED");
     		}
     	}
+    	
+    	// update scan result
+    	IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+    	if (scanResult != null) {
+    		grid = scanResult.getContents();
+    		((TextView)findViewById(R.id.scan_status)).setText(grid);
+    	}
+    	
     	super.onActivityResult(requestCode, resultCode, data);
     }
 }

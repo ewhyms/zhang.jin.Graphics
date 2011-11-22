@@ -3,4 +3,5 @@
     <item android:id="@+id/pair_item" android:title="@string/select"/>
     <item android:id="@+id/start_server" android:title="@string/start_server"/>
     <item android:id="@+id/stop_server" android:title="@string/stop_server"/>
+    <item android:id="@+id/scan" android:title="@string/scan"/>
 </menu>

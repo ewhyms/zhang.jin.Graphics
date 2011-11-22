@@ -21,7 +21,8 @@
         </activity>
         <activity
             android:label="@string/gadgets"
-            android:name=".GraphicsActivity" >
+            android:name=".GraphicsActivity"
+            android:screenOrientation="portrait" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -6,6 +6,7 @@ import java.beans.PropertyChangeListener;
 import zhang.jin.graphics.R;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -33,11 +34,15 @@ public class GraphicsActivity extends BluetoothActivity implements PropertyChang
 		Cleat,
 		ElectricOutlet,
 		Kettle,
-		Rope,
+		RopeDownRight,
+		RopeLeftRight,
+		RopeUpDown,
+		RopeUpRight,
 		RubberBand,
 		TV,
 		WaterCooler,
-		Wire
+		WireLeftRight,
+		WireUpDown
 	}
 	
 	// The current object view
@@ -166,8 +171,17 @@ public class GraphicsActivity extends BluetoothActivity implements PropertyChang
 				case Kettle:
 					currentView = new KettleView(GraphicsActivity.this);
 					break;
-				case Rope:
+				case RopeDownRight:
+					currentView = new RopeDownRightView(GraphicsActivity.this);
+					break;
+				case RopeLeftRight:
 					currentView = new RopeLeftRightView(GraphicsActivity.this);
+					break;
+				case RopeUpDown:
+					currentView = new RopeUpDownView(GraphicsActivity.this);
+					break;
+				case RopeUpRight:
+					currentView = new RopeUpRightView(GraphicsActivity.this);
 					break;
 				case RubberBand:
 					currentView = new RubberBandView(GraphicsActivity.this);
@@ -178,8 +192,11 @@ public class GraphicsActivity extends BluetoothActivity implements PropertyChang
 				case WaterCooler:
 					currentView = new WaterCoolerView(GraphicsActivity.this);
 					break;
-				case Wire:
+				case WireLeftRight:
 					currentView = new WireLeftRightView(GraphicsActivity.this);
+					break;
+				case WireUpDown:
+					currentView = new WireUpDownView(GraphicsActivity.this);
 					break;
 				}
 
@@ -232,19 +249,20 @@ public class GraphicsActivity extends BluetoothActivity implements PropertyChang
 		Button startButton = (Button)(findViewById(R.id.startButton));
 		Button turnButton = (Button)(findViewById(R.id.turnButton));
 		
-		alexButton.setVisibility(View.GONE);
-		electricOnButton.setVisibility(View.GONE);
-		electricOffButton.setVisibility(View.GONE);
-		heatButton.setVisibility(View.GONE);
-		pulseButton.setVisibility(View.GONE);
-		steamButton.setVisibility(View.GONE);
-		waterButton.setVisibility(View.GONE);
-		clapButton.setVisibility(View.GONE);
-		pullButton.setVisibility(View.GONE);
-		releaseButton.setVisibility(View.GONE);
-		startButton.setVisibility(View.GONE);
-		turnButton.setVisibility(View.GONE);
+		alexButton.setVisibility(View.VISIBLE);
+		electricOnButton.setVisibility(View.VISIBLE);
+		electricOffButton.setVisibility(View.VISIBLE);
+		heatButton.setVisibility(View.VISIBLE);
+		pulseButton.setVisibility(View.VISIBLE);
+		steamButton.setVisibility(View.VISIBLE);
+		waterButton.setVisibility(View.VISIBLE);
+		clapButton.setVisibility(View.VISIBLE);
+		pullButton.setVisibility(View.VISIBLE);
+		releaseButton.setVisibility(View.VISIBLE);
+		startButton.setVisibility(View.VISIBLE);
+		turnButton.setVisibility(View.VISIBLE);
 		
+		/*
 		switch (type) {
 		case ChristmasTree:
 			electricOnButton.setVisibility(View.VISIBLE);
@@ -318,9 +336,12 @@ public class GraphicsActivity extends BluetoothActivity implements PropertyChang
 		}
 		// redraw the linear layout containing the buttons
 		findViewById(R.id.buttonLayout).invalidate();
+		*/
     }
     
     protected void send(Event event, Direction direction) {
+    	if (event == null)
+    		return;
     	if (direction == Direction.All || direction == Direction.Both) {
     		for (Direction d : currentView.getDirections()) {
     			super.send(event, d);
